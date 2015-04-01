@@ -1,6 +1,6 @@
 /***
  Copyright 2013 Mac Craven
-
+ 
  Modified by Muhannad Shelleh:
  
  2015-04-01:
@@ -393,7 +393,9 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
     // printing
 
     function print(string) {
-        if (_consoleHandler && typeof _consoleHandler == 'function') {
+        if (_consoleHandler === false) {
+            return;
+        } else if (_consoleHandler && typeof _consoleHandler == 'function') {
             _consoleHandler(string);
         } else {
             console.log(string);
