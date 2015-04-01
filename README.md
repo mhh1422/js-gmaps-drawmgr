@@ -10,34 +10,38 @@ This is the [blog post] and the [original code]:
 
 ## How to Use
 1. Include the Google maps apis with drawings library  
-   ```html```<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing&sensor=false"></script>```
+```html
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing&sensor=false"></script>
+```
 1. Include the library  
-   ```html```<script type="text/javascript" src="gmaps-drawmgr.min.js"></script>```
+```html
+<script type="text/javascript" src="gmaps-drawmgr.min.js"></script>
+```
 1. Create a Google maps object.  
-   ```javascript```
-    var center = new google.maps.LatLng(42.3583, -71.0603);
+```javascript
+ var center = new google.maps.LatLng(42.3583, -71.0603);
 
-    var mapOptions = {
-        zoom: 10,
-        center: center,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        disableDefaultUI: true,
-        zoomControl: true
-    };
+ var mapOptions = {
+     zoom: 10,
+     center: center,
+     mapTypeId: google.maps.MapTypeId.ROADMAP,
+     disableDefaultUI: true,
+     zoomControl: true
+ };
 
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-   ```
+ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+```
 1. Call the library initiator passing the map object, and optionally the options and handlers.  
-   ```javascript```
-    var shapesMap = new drawMgr(map, {  
-        drawingModes: [  
-            google.maps.drawing.OverlayType.CIRCLE,   
-            google.maps.drawing.OverlayType.RECTANGLE,   
-            google.maps.drawing.OverlayType.POLYGON],  
-        position: google.maps.ControlPosition.TOP_CENTER,  
-        enabled: false,  
-    });
-   ```
+```javascript
+ var shapesMap = new drawMgr(map, {  
+     drawingModes: [  
+         google.maps.drawing.OverlayType.CIRCLE,   
+         google.maps.drawing.OverlayType.RECTANGLE,   
+         google.maps.drawing.OverlayType.POLYGON],  
+     position: google.maps.ControlPosition.TOP_CENTER,  
+     enabled: false,  
+ });
+```
 1. Call the different drawMgr methods
 
 ## Methods
