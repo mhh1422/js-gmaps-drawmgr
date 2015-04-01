@@ -49,10 +49,11 @@ All the following methods can be called in the drawMgr object context: i.e. draw
 * drawMgr.getJSON() to get the JSON representation of the drawing manager
 
 ## Examples
-*to be done*
+*to be added soon*. For now, check the [test file](./tests/test.html) in the repo.
 
 ## Modifications
 ### 2015-04-01:
  * Made the class more untied with UI.
  * Now use drawMgr.clear(), drawMgr.delete(), drawMgr.disable(), drawMgr.enable(), and drawMgr.enabled() instead of passing UI objects.
  * Pass map object instead of passing maps container.
+ * Adding the public methods: delete, clear, load, save, enable, disable, enabled, and getJSON
