@@ -627,7 +627,7 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
         drawMgr.enabled = drawMgrEnabled;
         drawMgr.getJSON = jsonMake;
         drawMgr.save = shapesSave;
-        drawMgr.load = shapesLoad;
+        drawMgr.load = load;
 
         shapesLoad();
 
@@ -657,4 +657,9 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
 
     // initialization
     onCreate();
+    
+    function load(){
+        shapesHideAll();
+        shapesLoad();
+    }
 }
