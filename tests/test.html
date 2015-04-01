@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta charset="UTF-8" />
+        <title>Test gmaps drawmgr</title>
+        <style type="text/css">
+            #map, html, body { padding: 0; margin: 0; height: 100%; }
+            #buttons { position: fixed; top: 5px; right: 5px; }
+        </style>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing&sensor=false"></script>
+        <script type="text/javascript" src="../gmaps-drawmgr.js"></script>
+        <script type="text/javascript">
+            var map = null;
+
+            function initialize() {
+                var center = new google.maps.LatLng(42.3583, -71.0603);
+
+                var mapOptions = {
+                    zoom: 10,
+                    center: center,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true,
+                    zoomControl: true
+                };
+
+                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                var shapesMap = new drawMgr(map, {
+                    drawingModes: [google.maps.drawing.OverlayType.CIRCLE, google.maps.drawing.OverlayType.RECTANGLE, google.maps.drawing.OverlayType.POLYGON],
+                    position: google.maps.ControlPosition.TOP_CENTER,
+                    enabled: false,
+                }, undefined, function () {
+                    return {
+                        "shapes": [{
+                                "type": "rectangle", "color": "undefined", "bounds": {
+                                    "northEast": {"lat": "42.384922757848074", "lng": "-71.50177001953125"},
+                                    "southWest": {"lat": "42.259016415705766", "lng": "-71.78192138671875"}
+                                }
+                            }]
+                    };
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="buttons">
+            <input type="button" id="delete-button" value="Delete Shape" onclick="drawMgr.delete()">
+            <input type="button" id="clear-button" value="Clear All Shapes" onclick="drawMgr.clear()">
+        </div>
+    </body>
+</html>
