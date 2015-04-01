@@ -15,25 +15,28 @@ This is the [blog post] and the [original code]:
    ```<script type="text/javascript" src="gmaps-drawmgr.min.js"></script>```
 1. Create a Google maps object.  
    ```html
-                var center = new google.maps.LatLng(42.3583, -71.0603);
+    var center = new google.maps.LatLng(42.3583, -71.0603);
 
-                var mapOptions = {
-                    zoom: 10,
-                    center: center,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    disableDefaultUI: true,
-                    zoomControl: true
-                };
+    var mapOptions = {
+        zoom: 10,
+        center: center,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        zoomControl: true
+    };
 
-                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
    ```
 1. Call the library initiator passing the map object, and optionally the options and handlers.  
    ```html
-                var shapesMap = new drawMgr(map, {
-                    drawingModes: [google.maps.drawing.OverlayType.CIRCLE, google.maps.drawing.OverlayType.RECTANGLE, google.maps.drawing.OverlayType.POLYGON],
-                    position: google.maps.ControlPosition.TOP_CENTER,
-                    enabled: false,
-                });
+    var shapesMap = new drawMgr(map, {
+        drawingModes: [
+            google.maps.drawing.OverlayType.CIRCLE, 
+            google.maps.drawing.OverlayType.RECTANGLE, 
+            google.maps.drawing.OverlayType.POLYGON],
+        position: google.maps.ControlPosition.TOP_CENTER,
+        enabled: false,
+    });
    ```
 1. Call the different drawMgr methods
 
