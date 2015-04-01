@@ -617,11 +617,15 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
 
         google.maps.event.addListener(_map, 'click', onMapClicked);
 
+        //public methods
         drawMgr.clear = onClear;
         drawMgr.delete = onDelete;
         drawMgr.disable = disableDrawMgr;
         drawMgr.enable = enableDrawMgr;
         drawMgr.enabled = drawMgrEnabled;
+        drawMgr.getJSON = getJSON;
+        drawMgr.save = shapesSave;
+        drawMgr.load = shapesLoad;
 
         shapesLoad();
 
