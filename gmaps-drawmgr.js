@@ -623,7 +623,7 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
         drawMgr.disable = disableDrawMgr;
         drawMgr.enable = enableDrawMgr;
         drawMgr.enabled = drawMgrEnabled;
-        drawMgr.getJSON = getJSON;
+        drawMgr.getJSON = jsonMake;
         drawMgr.save = shapesSave;
         drawMgr.load = shapesLoad;
 
