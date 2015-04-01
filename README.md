@@ -29,13 +29,13 @@ This is the [blog post] and the [original code]:
    ```
 1. Call the library initiator passing the map object, and optionally the options and handlers.  
    ```html
-    var shapesMap = new drawMgr(map, {
-        drawingModes: [
-            google.maps.drawing.OverlayType.CIRCLE, 
-            google.maps.drawing.OverlayType.RECTANGLE, 
-            google.maps.drawing.OverlayType.POLYGON],
-        position: google.maps.ControlPosition.TOP_CENTER,
-        enabled: false,
+    var shapesMap = new drawMgr(map, {  
+        drawingModes: [  
+            google.maps.drawing.OverlayType.CIRCLE,   
+            google.maps.drawing.OverlayType.RECTANGLE,   
+            google.maps.drawing.OverlayType.POLYGON],  
+        position: google.maps.ControlPosition.TOP_CENTER,  
+        enabled: false,  
     });
    ```
 1. Call the different drawMgr methods
