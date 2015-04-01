@@ -10,11 +10,11 @@ This is the [blog post] and the [original code]:
 
 ## How to Use
 1. Include the Google maps apis with drawings library  
-   ```<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing&sensor=false"></script>```
+   ```html```<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing&sensor=false"></script>```
 1. Include the library  
-   ```<script type="text/javascript" src="gmaps-drawmgr.min.js"></script>```
+   ```html```<script type="text/javascript" src="gmaps-drawmgr.min.js"></script>```
 1. Create a Google maps object.  
-   ```html
+   ```javascript```
     var center = new google.maps.LatLng(42.3583, -71.0603);
 
     var mapOptions = {
@@ -28,7 +28,7 @@ This is the [blog post] and the [original code]:
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
    ```
 1. Call the library initiator passing the map object, and optionally the options and handlers.  
-   ```html
+   ```javascript```
     var shapesMap = new drawMgr(map, {  
         drawingModes: [  
             google.maps.drawing.OverlayType.CIRCLE,   
