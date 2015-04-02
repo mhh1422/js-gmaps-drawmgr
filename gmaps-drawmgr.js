@@ -406,6 +406,10 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
         print("drawing mode set to " + typeDesc(drawingManager.getDrawingMode()) + "\n");
     }
 
+    function getDrawingMode() {
+        return _drawingManager.getDrawingMode();
+    }
+
     // selection
 
     function selectionPrint() {
@@ -430,7 +434,7 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
             _selection = null;
         }
 
-        if (newSelection != null) {
+        if (newSelection != null && newSelection.type !== 'marker') {
             _selection = newSelection;
             _selection.setEditable(drawMgrEnabled());
         }
@@ -609,6 +613,7 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
     }
 
     function onDrawingModeChanged() {
+        _options && _options.hasOwnProperty('onModeChanged') && _options.onModeChanged(getDrawingMode());
         printDrawingMode(drawingManager);
         selectionClear();
     }
@@ -628,6 +633,8 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
         drawMgr.getJSON = jsonMake;
         drawMgr.save = shapesSave;
         drawMgr.load = load;
+        drawMgr.mode = getDrawingMode;
+        drawMgr.manager = _drawingManager;
 
         shapesLoad();
 
@@ -657,8 +664,8 @@ function drawMgr(_map, _options, _saveHandler, _loadHandler, _consoleHandler) {
 
     // initialization
     onCreate();
-    
-    function load(){
+
+    function load() {
         shapesHideAll();
         shapesLoad();
     }
